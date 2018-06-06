@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <iframe src="http://163.com" width="1000px" frameborder="1" name="163" sandbox="allow-modals"></iframe>iframe里没有href是src <br>
+    (target指向name=163的iframe标签)
+    <a href="https://www.sogou.com/" target="163">搜狗</a> <br>  
+    <hr>
+    a标签的target用法。
+    <a href="http://www.qq.com">腾讯网</a>
+    <a href="http://sina.com" target="_blank">新浪网</a>
+    <a href="http://weibo.com" target="_self">微博</a>
+    <a href="http://bilibili.com" target="_top">哔哩哔哩</a>
+    <a href="http://zhihu.com" target="parent">知乎</a>
+    <a href="https://browser.360.cn/se/" download="aaa">a标签的download用法</a><br>
+    
+    <a href="/..">..</a><br>
+    <a href="">空</a><br>
+    <a href="#">#</a><br>
+    <a href="javascript:alert(1);">jsa(1)</a><br>
+    <a href="javascript:;">js:;</a><br>
+    <a href="./index.html">html</a><br>
+    <a href="//qq.com">//qq/com</a>
+    <a href="/qq.com">/qq.com</a>
+    <a href="?name=百科">Get默认把参数加到查询参数里post则放到第四部分</a>
+    <br>'a href=/..linka 标签被点击后会发生什么？<br>' 浏览器发起 GET / HTTP/1.1 的请求.
+
+
+    <hr>
+
+
+    <form action="littleboy" method="GET" target="_blank">
+        form里如果只有一个按钮“button /button”,那么它默认变为submit按钮。<br>input的type若干属性。<br>
+        <label>用户名<input type="text" name="username"></label><br>
+        <label>密码<input type="password" name="password"></label><br>
+        <label><input type="checkbox" name="record" value="yes">记住密码</label><br>
+
+        喜欢的水果（type=checkbox为多选）
+        <label><input type="checkbox" name="fruit" value="orange">橘子</label>
+        <label><input type="checkbox" name="fruit" value="香蕉">香蕉</label><br>
+        
+        爱我吗（type=radio--- name相同时为单选）
+        <label><input type="radio" name="love" value="yes">爱</label>
+        <label><input type="radio" name="love" value="no">不爱</label><br>
+        <input type="file" name="input">
+        <input type="hidden" name="hide" id="yincang">
+
+        测试<input type="text" name="test"><br>
+        
+        下拉列表
+        <select name="group">
+            <option value="" selected>-</option>
+            <option value="1">一组</option>
+            <option value="2" disabled>二组</option>
+            <option value="3">三组</option>
+            <option value="3">四组</option>
+        </select>
+
+        <hr>
+        <textarea name="爱好" cols="50" rows="10"></textarea>
+        Submit的两种实现方法。
+        <input type="submit" value="提了个  交">
+        <button>Submit</button>
+
+    </form>
+</body>
+</html>
