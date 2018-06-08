@@ -1,53 +1,178 @@
 body {
-    background-color: #1E1E1E;
-    color:green;
+    background-color: #EFEFEF;
+    margin: 0;
 }
+.clearfix::after{
+    content: ' ';
+    display: block;
+    clear: both;
+    /*消除使用float时产生的bug，暂时记住就好*/
+}
+/*body > div > a{    float: left;}没用，金额能自己加错了*/
 a{
     color:inherit;
     text-decoration: none;
 }
-.clearfix::after{
-    content: '';
-    display: block;
-    clear: both;
+.banner{
+    height: 515px;
+    background-image:url(./rs-cover.jpg);
+    background-position: center center;
+    background-size: cover;
+    /* 大背景 */
 }
-.topNavBar > nav{
-    float: right;
+.banner .mask{
+    height: 515px;
+    background-color:rgba(0,0,0,0.7);
+    /*设置背景图的透明度，高度要与背景图一致*/
 }
-.topNavBar > nav > ul{
+.topNavBar{
+    /*目的是为了确定导航栏的位置 
+    padding-top: 28px;                                  
+    padding-bottom: 28px;
+    padding-right: 14px;
+    padding-left: 14px;
+    可简写为下面形式，顺序是上右下左*/
+    padding: 28px 0 28px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.topNavBar-inner{
+    padding: 0 16px;
+}
+.topNavBar nav{
     float: right;
+    /*导航链接标签里的内容将靠右侧*/
+}
+.topNavBar nav > ul{
+    /*float: right;可能和上面功能重复所以先删掉*/
     list-style: none;
+    /*去掉列表的样式*/
     margin-top: 0;
     margin-bottom: 0;
-
+    /*上  下外边距设为0*/
 }
-.topNavBar > nav > ul > li {
+.topNavBar nav > ul > li {
     float: left;
+    /*会改变li里成员的顺序*/
     margin-left: 17px;
     margin-right: 17px;
+    /*改变导航栏里文字的间距*/
 }   
-.topNavBar > nav > ul > li > a{
-    font-size: 15px;
+.topNavBar nav > ul > li > a{
+    font-size: 13px;
     color: #b7b7b7;
     text-decoration: none;
     font-weight: bold;
-    border-bottom: 3    px solid transparent;
-    padding-bottom: 5px;
+    /*设置a标签的字体大小，颜色，去掉下划线，加粗字体*/
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+    /*设置上下存在但透明的下划线标记，其中只用到下标。*/
+    padding-bottom: 7px;
     padding-top: 5px;
+
+    /*设置上下内边距，为了与rscard对齐等*/
     display: block;
+    /*次元素将显示为块级元素，此元素前后具有换行符*/
 }
-.topNavBar > nav > ul > li > a:hover{
+.topNavBar nav > ul > li > a:hover{
     border-bottom: 3px solid #E8676B;
+    /*有hover参数时代表悬停时会显示三个像素的实心下划线*/
 }
 
-.card{
-    font-size: 24px;
-    font-family: "Fredoka One";
+.topNavBar .logo{
+    font-size: 26px;
+    font-family: "Fredoka One"; 
     font-weight: bold;
+    /*设置logo字体像素、字体及加粗*/
+    padding-bottom: 3px;
+    padding-right: 5px;
+    /*设置logo的上线内边距。为调整位置*/
 }
-.topNavBar > logo > rs{
-    font-size: 24px;
-    font-family: "Arial Black";
-    font-weight: bold;
+.topNavBar .logo .card{
+    margin-left: 2px;
+    color: #9A9DA2;
+    /*将量部分分割开2像素，并将card部分设为某某颜色*/
+}
+.topNavBar .logo .rs{
+    color: #E8676B;
+
+}
+.usercard{
+    
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+.usercard .txt .profile .welcome{
+    /*.usercard .welcome写法也可*/
+    background: #E8676B;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 4px 15px;
+    line-height: 21px;
+    position: relative;
+}
+.usercard .welcome .triangle{
+    display: block;
+    /* 默认是span,把他变成div（块级元素） */
+    border: 8px solid transparent;
+    width: 0px;
+    height: 0px;
+    border-left-color: #E8676B;
+    border-top-color: #E8676B;
+    position: absolute;
+    /* 绝对定位 子元素absolute，父元素relative。子元素相对于父元素绝对位置 */
+    top: 100%;
+    left: 4px;
+    /* 距离父元素上端100%也就是在父元素的下端，距左侧4像素 */
+  }
+.usercard .picture{
+    float: left;
+    /* 为picture添加float并为其父元素添加clearfix */
+}
+.usercard .txt{
+    float: left;
+    margin-left: 65px;
+    width: 460px; 
+    /* 为user card添加浮动，并为其父元素添加clearfix */
+}
+.tap{
+    padding: 50px;
+    /* 为头像设置边距。设置padding会让本来的大小改变，这时候就可以为外面多嵌套的部分设置padding而不会影响原来的大小（自适应） */
 }
 
+/* 设置个人信息格式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+.profile > h1{
+    padding-top: 27px; 
+}
+.profile >h2{
+    padding-top: 7px;
+    
+}
+hr{
+    border: none;
+    border-top: 1px solid #DEDEDE;
+}
+.profile > hr{
+    margin: 20px 0; 
+}
+.usercard dt{
+    width: 30%;
+    font-weight: bold;
+}
+.usercard dd{
+    width: 60%;
+    color: #9DA0A7;
+    margin-bottom: 1px;
+}
+.usercard dd,
+.usercard dt{
+    float: left;
+    padding: 6px 0;
+}
