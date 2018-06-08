@@ -176,3 +176,24 @@ hr{
     float: left;
     padding: 6px 0;
 }
+.usercard .media{
+    background: #E8676B;
+    text-align: center;
+
+}
+.usercard svg{
+    width: 30px;
+    height: 30px;
+    fill: #FFFFFF;
+    vertical-align: top;
+}
+.usercard .media>a{
+    display: inline-block;
+    border-radius: 80%;
+    line-height: 30px;
+    padding: 10px 10px;
+    margin: 5px 16px;
+}
+.usercard .media>a:hover{
+    background: #D05C60;
+}
