@@ -2,13 +2,16 @@ body {
     background-color: #EFEFEF;
     margin: 0;
 }
+ h1, h2,h3,h4,h5,h6{ 
+    font-weight: normal; 
+ } 
 .clearfix::after{
     content: ' ';
     display: block;
     clear: both;
     /*消除使用float时产生的bug，暂时记住就好*/
 }
-/*body > div > a{    float: left;}没用，金额能自己加错了*/
+/*body > div > a{    float: left;}没用，可能自己加错了*/
 a{
     color:inherit;
     text-decoration: none;
@@ -68,9 +71,8 @@ a{
     border-bottom: 3px solid transparent;
     border-top: 3px solid transparent;
     /*设置上下存在但透明的下划线标记，其中只用到下标。*/
-    padding-bottom: 7px;
+    padding-bottom: 5px;
     padding-top: 5px;
-
     /*设置上下内边距，为了与rscard对齐等*/
     display: block;
     /*次元素将显示为块级元素，此元素前后具有换行符*/
@@ -99,11 +101,12 @@ a{
 
 }
 .usercard{
-    
+    margin-top: -340px;
     max-width: 930px;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
+    box-shadow: 0px 4px 10px 1px rgba(224,208,224,1);
 }
 .usercard .txt .profile .welcome{
     /*.usercard .welcome写法也可*/
@@ -117,7 +120,7 @@ a{
 .usercard .welcome .triangle{
     display: block;
     /* 默认是span,把他变成div（块级元素） */
-    border: 8px solid transparent;
+    border: 5px solid transparent;
     width: 0px;
     height: 0px;
     border-left-color: #E8676B;
@@ -150,6 +153,7 @@ a{
 }
 .profile > h1{
     padding-top: 27px; 
+    font-weight: bold;
 }
 .profile >h2{
     padding-top: 7px;
@@ -184,16 +188,166 @@ hr{
 .usercard svg{
     width: 30px;
     height: 30px;
+    /* 设置连方式图标的大小 */
     fill: #FFFFFF;
-    vertical-align: top;
+    vertical-align: middle;
+    /* 垂直对齐方式--单元格垂直居中 */
 }
 .usercard .media>a{
     display: inline-block;
-    border-radius: 80%;
+    /* 该元素生成一个块状盒，该块状盒随着周围内容流动，如同它是一个单独的行内盒子
+    （表现更像是一个被替换的元素） */
+    border-radius: 50%;
+    /* 原型 */
     line-height: 30px;
+    /* 设置行高联系方式栏的行高 */
     padding: 10px 10px;
+    /* 设置footer栏（联系方式栏）上下内边距为10px */
     margin: 5px 16px;
+    /*  设置footer栏（联系方式栏）上下左右外边距 */
 }
 .usercard .media>a:hover{
     background: #D05C60;
+}
+body >main .dr{
+    display: block;
+    margin: 30px auto;
+    padding: 20px 0 20px 0;
+    border: 1px solid #CDCFD1;
+    height: 40  px;
+    width: 275px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 3%;
+    
+    /* a标签里的文字需要嵌套一个div才能居中 */
+}
+body > main .dr:hover{
+    box-shadow: 0px 2px 10px 2px rgba(184,170,184,1);
+    transition-duration: 0.5s;
+}
+body > main >p{
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* 职           业              技              能              栏 */
+body .skills,
+body  .portfolio{
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+body > section >h2,
+body  .portfolio h2{
+    height: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #3D4451;
+    padding: 35px 0;
+    /* 代码复用 */
+}
+body .skills >ol>div{
+    float: left;
+    list-style: none;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 40px 0 0 50px;
+}
+body .skills >ol>div:nth-child(even){
+    float: right;
+    margin: 40px 50px 0 0;
+}
+body .skills >ol>div>li{
+    font-size: 15px;
+    padding-bottom: 5px; 
+}
+
+body .skills .processBar{
+    /* 进度条 */
+    background:  #FAE1E1;
+    width: 100%;
+    height: 5px;
+    margin: 0;
+}
+
+body .skills .process{
+    /* 进度 */
+    background: #E8676B;
+    width: 30%;
+    height: 100%;
+    border-radius: 3px;
+}
+.skills >ol{
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 10px 2px rgba(184,170,184,1);
+}
+/* 设       置          作          品          集 */
+
+body .portfolio>nav{
+    text-align: center;
+    /* 居中加在被居中元素的爸爸身上 */
+}
+body .portfolio ol{
+    /* text-align: center; */
+    list-style: none;
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+    display: inline-block;/*使用display：inline—block会让元素大小收缩(内联)*/
+    vertical-align: top;/*一般需要在inline-block后加上。*/
+}
+body .portfolio li{
+    float: left;
+    margin-left: 40px; 
+    cursor: pointer; 
+    /* 鼠标浮在上面会变成手形 */
+}
+body .portfolio li:first-child{
+    margin-left: 0;
+}
+body .portfolio>nav .bar{
+    height: 5px;
+    /* border: 1px solid red;  */
+    /*  一  如何使得这部分长度等于其上的文字宽度呢 */
+    background-color: #FFFFFF;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+body .portfolio>nav{
+    display: inline-block;
+    vertical-align: top;
+    /*  二  如上述所说，nav的长度等于section.portfolio的长度
+    ，可以加display：inline-block让其向内缩进，并为其添加
+    vertical-align：top消除其带来的影响。此时这部分会向右靠近，
+    原来ol设置的居中会失效 */
+}
+body .portfolio{
+    /*  三  需在爷爷的身上加入居中才会生效，因为它的爸爸是inline-block  */
+    text-align: center;
+}
+body .portfolio>nav .bar-inner{
+    height: 100%;
+    background-color: #E8676B ;
+    /* width: 32px; */
+    border-radius: 3px;
+    transition: all 0.3s;
+    /* bar-inner内的进度条的变化全部都需要0.3s的变化 */
+}
+body .portfolio > nav .bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 32px;
+}
+body .portfolio > nav .bar.state-2 .bar-inner{
+    margin-left: 70px;
+    width: 36px;
+}
+body .portfolio > nav .bar.state-3 .bar-inner{
+    margin-left: 145px;
+    width: 90px;
+    /* 对应的顺序不要搞错 */
 }
