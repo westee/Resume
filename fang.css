@@ -212,11 +212,13 @@ hr{
 body >main .dr{
     display: block;
     margin: 30px auto;
+    /* 下载框居中 */
     padding: 20px 0 20px 0;
     border: 1px solid #CDCFD1;
-    height: 40  px;
+    /* height: 40px; 多余 */
     width: 275px;
     text-align: center;
+    /* 下载框里的文字居中 */
     font-weight: bold;
     border-radius: 3%;
     
@@ -237,7 +239,7 @@ body  .portfolio{
     max-width: 930px;
     margin-left: auto;
     margin-right: auto;
-    
+    /* 上两行可实现剧中效果 */
 }
 body > section >h2,
 body  .portfolio h2{
@@ -253,6 +255,8 @@ body .skills >ol>div{
     list-style: none;
     width: 40%;
     box-sizing: border-box;
+    /* border-box的width包括padding和border,实际宽度
+    等于设定的width减去padding和border等的值 */
     margin: 40px 0 0 50px;
 }
 body .skills >ol>div:nth-child(even){
