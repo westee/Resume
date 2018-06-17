@@ -84,7 +84,7 @@ body > main .right{
   position: fixed ;
   top:101px;
   right:72px;
-  /* z-index: 1; */
+  z-index: 1;
   float: right;
   /* border: 1px solid greenyellow; */
   /* background-color: red; */
@@ -92,7 +92,7 @@ body > main .right{
 
 body > main .middle{
   /* display: none; */
-  /* z-index: -1; */
+  z-index: -1;
   position: relative;
   width: 810px;
   background-color: white;
