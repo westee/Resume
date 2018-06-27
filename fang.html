@@ -1,174 +1,225 @@
 <!DOCTYPE html>
 <html>
-	<head >
-        <title>简历</title>
-        <meta charset=utf-8>
-        
-        <link rel="stylesheet" href="./fang.css">
-        <script src="//at.alicdn.com/t/font_700498_pqxwusn9xufvfgvi.js"></script>
-        <style type="text/css">
-            .icon {
-               width: 1em; height: 1em;
-               vertical-align: -0.15em;
-               fill: currentColor;
-               overflow: hidden;
-            }
-        </style>
-    </head>
-	<body>
-		<div class="topNavBar ">
-            <div class="topNavBar-inner clearfix">
-                <a class="logo" href="#" alt="logo" >
-                <span class="rs">RS</span><span class="card">card</span>
+
+<head>
+    <title>简历</title>
+    <meta charset=utf-8>
+
+    <link rel="stylesheet" href="./fang.css">
+    <link rel="stylesheet" href="./css/loading.css">
+    <script src="//at.alicdn.com/t/font_700498_pqxwusn9xufvfgvi.js"></script>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    .wrapper{
+        display: none;
+        position: fixed;
+        top:0; left:0;width: 100%;height: 100%;
+        background: white;
+        z-index: 2;
+    }
+    .wrapper.active{
+        display: block;
+    }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper" class="wrapper active"></div>
+    <div class="topNavBar ">
+        <div class="topNavBar-inner clearfix">
+            <a class="logo" href="#" alt="logo">
+                <span class="rs">RS</span>
+                <span class="card">card</span>
                 <!--  -->
             </a>
             <nav>
                 <ul class="clearfix">
-                    <li><a href="">关于</a></li>
-                    <li><a href="">技能</a></li>
-                    <li><a href="">PORTFOLID</a></li>
-                    <li><a href="">经历</a></li>
-                    <li><a href="">PRICING</a></li>
-                    <li><a href="">博客</a></li>
-                    <li><a href="">CALENDAR</a></li>
-                    <li><a href="">联系方式</a></li>
-                    <li><a href="">其他</a></li>
+                    <li>
+                        <a href="">关于</a>
+                    </li>
+                    <li>
+                        <a href="">技能</a>
+                    </li>
+                    <li>
+                        <a href="">PORTFOLID</a>
+                    </li>
+                    <li>
+                        <a href="">经历</a>
+                    </li>
+                    <li>
+                        <a href="">PRICING</a>
+                    </li>
+                    <li>
+                        <a href="">博客</a>
+                    </li>
+                    <li>
+                        <a href="">CALENDAR</a>
+                    </li>
+                    <li>
+                        <a href="">联系方式</a>
+                    </li>
+                    <li>
+                        <a href="">其他</a>
+                    </li>
                 </ul>
             </nav>
+        </div>
+
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main>
+        <div class="usercard">
+            <div class="tap clearfix">
+                <div class="picture">
+                    <img src="./header_1.jpg" alt="header" style="width: 299px; height: 347px;">
+                </div>
+                <div class="txt">
+                    <div class="profile">
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
+                        <h1>我是王旭东</h1>
+                        <h2>一个前端程序员</h2>
+                        <hr>
+                        <dl class="clearfix">
+                            <dt>年龄</dt>
+                            <dd>18</dd>
+                            <dt>城市</dt>
+                            <dd>青岛</dd>
+                            <dt>手机</dt>
+                            <dd>15612345678</dd>
+                            <dt>邮箱</dt>
+                            <dd>9999@qq.com</dd>
+                            <dt>毕业时间</dt>
+                            <dd>2018年</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo1"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weixin1"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github1"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qq1"></use>
+                    </svg>
+                </a>
+            </footer>
 
         </div>
-        <div class="banner">
-            <div class="mask"></div>
+        <div class="dr">
+            <a class="downloadResume" href="./Resumr.pdf" target="_blank" download="">下载我的简历</a>
         </div>
-        <main>
-            <div class="usercard">
-                <div class="tap clearfix">
-                    <div class="picture" >
-                        <img src="./header_1.jpg" alt="header" style="width: 299px; height: 347px;">
-                    </div>
-                    <div class="txt">
-                        <div class="profile">
-                            <span class="welcome">Hello
-                                <span class="triangle"></span>
-                            </span>
-                            <h1>我是王旭东</h1>
-                            <h2>一个前端程序员</h2>
-                            <hr>
-                            <dl class="clearfix">
-                                <dt>年龄</dt>
-                                <dd>18</dd>
-                                <dt>城市</dt>
-                                <dd>青岛</dd>
-                                <dt>手机</dt>
-                                <dd>15612345678</dd>
-                                <dt>邮箱</dt>
-                                <dd>9999@qq.com</dd>
-                                <dt>毕业时间</dt>
-                                <dd>2018年</dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>       
-                <footer class="media">
-                    <a href="#"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-weibo1"></use></svg>
-                    </a>
-                    <a href="#"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-weixin1"></use></svg>
-                    </a>
-                    <a href="#"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-github1"></use></svg>
-                    </a>
-                    <a href="#"><svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-qq1"></use></svg>
-                    </a>
-                </footer>
-                
+        <p class="self-introduction">
+            source 命令可以强行让一个脚本去立即影响当前的环境。
+            <br> source 命令是bash shell的内置命令，从C Shell而来。
+            <br> source 命令会强制执行脚本中的全部命令,而忽略文件的权限。
+            <br> source 命令的另一种写法是点符号，用法和 source 相同，从Bourne Shell而来。
+            <br> source 命令可以影响执行脚本的父shell的环境，而 export 则只能影响其子shell的环境。
+            <br> source 命令通常用于重新执行刚修改的初始化文件，如 .bash_profile 和 .profile 等等。
+            <br>
+
+        </p>
+    </main>
+    <section class="skills">
+        <h2>职业技能</h2>
+        <ol class="clearfix">
+            <div>
+                <li>HTML 5 &amp; CSS 3</li>
+                <div class="processBar">
+                    <div class="process" style="width:99%;"></div>
+                </div>
             </div>
-            <div class="dr">
-                <a class="downloadResume" href="./Resumr.pdf" target="_blank"   download="">下载我的简历</a>
+            <div>
+                <li>JavaScript</li>
+                <div class="processBar">
+                    <div class="process"></div>
+                </div>
             </div>
-            <p class="self-introduction">
-               source 命令可以强行让一个脚本去立即影响当前的环境。<br>
-               source 命令是bash shell的内置命令，从C Shell而来。<br>
-               source 命令会强制执行脚本中的全部命令,而忽略文件的权限。<br>
-               source 命令的另一种写法是点符号，用法和 source 相同，从Bourne Shell而来。<br>
-               source 命令可以影响执行脚本的父shell的环境，而 export 则只能影响其子shell的环境。<br>
-               source 命令通常用于重新执行刚修改的初始化文件，如 .bash_profile 和 .profile 等等。<br>
-               
-            </p>
-        </main>
-        <section class="skills">
-            <h2>职业技能</h2>
-            <ol class="clearfix">
-                <div>
-                    <li>HTML 5 &amp; CSS 3</li>
-                    <div class="processBar">
-                        <div class="process" style="width:99%;"></div>
-                    </div>
+            <div>
+                <li>jQuery</li>
+                <div class="processBar">
+                    <div class="process"></div>
                 </div>
-                <div>
-                    <li>JavaScript</li>
-                    <div class="processBar">
-                        <div class="process"></div>
-                    </div>
+            </div>
+            <div>
+                <li>Vue</li>
+                <div class="processBar">
+                    <div class="process"></div>
                 </div>
-                <div>
-                    <li>jQuery</li>
-                    <div class="processBar">
-                        <div class="process"></div>
-                    </div>
+            </div>
+            <div>
+                <li>React</li>
+                <div class="processBar">
+                    <div class="process"></div>
                 </div>
-                <div>
-                    <li>Vue</li>
-                    <div class="processBar">
-                        <div class="process"></div>
-                    </div>
+            </div>
+            <div>
+                <li>HTTP</li>
+                <div class="processBar">
+                    <div class="process"></div>
                 </div>
-                <div>
-                    <li>React</li>
-                    <div class="processBar">
-                        <div class="process"></div>
-                    </div>
-                </div>
-                <div>
-                    <li>HTTP</li>
-                    <div class="processBar">
-                       <div class="process"></div>
-                    </div>
-                </div>    
-   
+            </div>
+
+        </ol>
+    </section>
+    <section class="portfolio">
+        <h2 class="">作品集</h2>
+        <nav>
+            <ol class='clearfix'>
+                <li id="portfolio1">全部</li>
+                <li id="portfolio2">框架</li>
+                <li id="portfolio3">原生JS&amp;CSS</li>
             </ol>
-        </section>
-        <section class="portfolio">
-            <h2 class="">作品集</h2>
-            <nav>    
-                <ol class='clearfix'>
-                    <li id="portfolio1">全部</li>
-                    <li id="portfolio2">框架</li>
-                    <li id="portfolio3">原生JS&amp;CSS</li>
-                </ol>
-                <div id="portfolioBar" class="bar state-1">
-                    <div class="bar-inner"></div>
-                </div>
-            </nav>
-            <script>
-                portfolio1.onclick= function(){
-                    portfolioBar.className='bar state-1'
-                }
-                portfolio2.onclick= function(){
-                    portfolioBar.className='bar state-2'
-                }
-                portfolio3.onclick= function(){
-                    portfolioBar.className='bar state-3'
-                }
-            </script>
-            <div class="jobs">
-                <div class="big"></div>
-                <div class="small1"></div>
-                <div class="small2"></div>
+            <div id="portfolioBar" class="bar state-1">
+                <div class="bar-inner"></div>
             </div>
-        </section>
-    </body>
+        </nav>
+        <script>
+            portfolio1.onclick = function () {
+                portfolioBar.className = 'bar state-1'
+            }
+            portfolio2.onclick = function () {
+                portfolioBar.className = 'bar state-2'
+            }
+            portfolio3.onclick = function () {
+                portfolioBar.className = 'bar state-3'
+            }
+        </script>
+        <div class="jobs">
+            <div class="big"></div>
+            <div class="small1"></div>
+            <div class="small2"></div>
+        </div>
+    </section>
+<script>
+    window.setTimeout(function(){
+       wrapper.classList.remove('active') 
+    },3000)
+ 
+</script>
+</body>
+
 </html>
