@@ -5,7 +5,10 @@ body {
  h1, h2,h3,h4,h5,h6{ 
     font-weight: normal; 
  } 
-.clearfix::after{
+ul,li{
+    list-style: none;
+}
+ .clearfix::after{
     content: ' ';
     display: block;
     clear: both;
@@ -39,6 +42,15 @@ a{
     position: fixed;
     top: 0;
     width: 100%;
+    transition: all 0.5s;
+    color: #b7b7b7;
+    z-index: 1;
+}
+.topNavBar.sticky{
+    background:white;
+    color: #2A333E;
+    padding: 14px 0;
+    box-shadow: 0px 6px 10px 2px rgba(0,0,0,0.25);
 }
 .topNavBar-inner{
     padding: 0 16px;
@@ -64,24 +76,45 @@ a{
 }   
 .topNavBar nav > ul > li > a{
     font-size: 13px;
-    color: #b7b7b7;
+    color: inherit;
     text-decoration: none;
     font-weight: bold;
     /*设置a标签的字体大小，颜色，去掉下划线，加粗字体*/
-    border-bottom: 3px solid transparent;
+    /* border-bottom: 3px solid transparent;
     border-top: 3px solid transparent;
-    /*设置上下存在但透明的下划线标记，其中只用到下标。*/
+    设置上下存在但透明的下划线标记，其中只用到下标。 */
     padding-bottom: 5px;
     padding-top: 5px;
     /*设置上下内边距，为了与rscard对齐等*/
     display: block;
     /*次元素将显示为块级元素，此元素前后具有换行符*/
+    position: relative;
 }
-.topNavBar nav > ul > li > a:hover{
-    border-bottom: 3px solid #E8676B;
+.topNavBar nav > ul > li > a:hover::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    /* bottom:0;   离文字太近 */
+    left: 0px;
+    /* 下划线与文字左对齐 */
+    width: 100%;
+    background: #E8676B;
+    height: 3px;
+    animation: lefttoright 1s;
+    /* border-bottom: 3px solid #E8676B; */
     /*有hover参数时代表悬停时会显示三个像素的实心下划线*/
 }
-
+@keyframes lefttoright{
+    from{
+        width: 0;
+        /* transform: translateX(-100%); */
+    }
+    to{
+        width: 100%;
+        /* transform: translateX(0); */
+    }
+}
 .topNavBar .logo{
     font-size: 26px;
     font-family: "Fredoka One"; 

@@ -32,7 +32,7 @@
 
 <body>
     <div id="wrapper" class="wrapper active"></div>
-    <div class="topNavBar ">
+    <div id="topNavBar" class="topNavBar ">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
                 <span class="rs">RS</span>
@@ -48,7 +48,12 @@
                         <a href="">技能</a>
                     </li>
                     <li>
-                        <a href="">PORTFOLID</a>
+                        <a href="">作品</a>
+                        <ul class="submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">经历</a>
@@ -217,8 +222,15 @@
 <script>
     window.setTimeout(function(){
        wrapper.classList.remove('active') 
-    },3000)
- 
+    },000)
+    window.onscroll = function(scroll){
+        if(scrollY > 0){
+            topNavBar.classList.add('sticky')
+        }else{
+            topNavBar.classList.remove('sticky')
+        }
+    
+    }
 </script>
 </body>
 
