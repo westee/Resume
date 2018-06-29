@@ -16,16 +16,21 @@
             fill: currentColor;
             overflow: hidden;
         }
-    .wrapper{
-        display: none;
-        position: fixed;
-        top:0; left:0;width: 100%;height: 100%;
-        background: white;
-        z-index: 2;
-    }
-    .wrapper.active{
-        display: block;
-    }
+
+        .wrapper {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2;
+        }
+
+        .wrapper.active {
+            display: block;
+        }
     </style>
 
 </head>
@@ -47,8 +52,8 @@
                     <li>
                         <a href="">技能</a>
                     </li>
-                    <li>
-                        <a href="">作品</a>
+                    <li class="menuTrigger">
+                        <a href="#">作品</a>
                         <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
@@ -61,8 +66,13 @@
                     <li>
                         <a href="">PRICING</a>
                     </li>
-                    <li>
+                    <li class="menuTrigger">
                         <a href="">博客</a>
+                        <ul class="submenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">CALENDAR</a>
@@ -219,19 +229,32 @@
             <div class="small2"></div>
         </div>
     </section>
-<script>
-    window.setTimeout(function(){
-       wrapper.classList.remove('active') 
-    },000)
-    window.onscroll = function(scroll){
-        if(scrollY > 0){
-            topNavBar.classList.add('sticky')
-        }else{
-            topNavBar.classList.remove('sticky')
+    <script>
+        window.setTimeout(function () {
+            wrapper.classList.remove('active')
+        }, 000)
+        window.onscroll = function (scroll) {
+            if (scrollY > 0) {
+                topNavBar.classList.add('sticky')
+            } else {
+                topNavBar.classList.remove('sticky')
+            }
         }
-    
-    }
-</script>
+
+        let liTags = document.querySelectorAll('nav ul li')
+        //aTags的长度为2
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
+                x.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function (x) {
+                x.currentTarget.classList.remove('active') 
+                // let brother = li.getElementsByTagName('ul')
+                // console.log(brother)
+                // brother.classList.remove('active')
+            }
+        }
+    </script>
 </body>
 
 </html>

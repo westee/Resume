@@ -46,6 +46,23 @@ a{
     color: #b7b7b7;
     z-index: 1;
 }
+.topNavBar .submenu{
+    display: none;
+    position:absolute;
+    right: 0;
+    top:100%;
+    background: #FFFFFF;
+    color: #2A333E;
+    padding:8px 8px;
+}
+.topNavBar li.active .submenu{
+    display:block; 
+    animation: selectanimation 10s;   
+}
+.topNavBar .submenu li{
+    white-space: nowrap;
+    padding: 5px 10px;
+}
 .topNavBar.sticky{
     background:white;
     color: #2A333E;
@@ -73,6 +90,7 @@ a{
     margin-left: 17px;
     margin-right: 17px;
     /*改变导航栏里文字的间距*/
+    position: relative;
 }   
 .topNavBar nav > ul > li > a{
     font-size: 13px;
@@ -90,7 +108,8 @@ a{
     /*次元素将显示为块级元素，此元素前后具有换行符*/
     position: relative;
 }
-.topNavBar nav > ul > li > a:hover::after{
+/* 导航栏的下划线效果 */
+.topNavBar nav > ul > li.active > a::after{
     content: '';
     display: block;
     position: absolute;
@@ -104,6 +123,14 @@ a{
     animation: lefttoright 1s;
     /* border-bottom: 3px solid #E8676B; */
     /*有hover参数时代表悬停时会显示三个像素的实心下划线*/
+}
+@keyframes selectanimation{
+    from{
+        margin-right: 100%; 
+    }
+    to{
+        margin-right: 0%;
+    }
 }
 @keyframes lefttoright{
     from{
