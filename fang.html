@@ -93,7 +93,7 @@
     </div>
     <main>
         <div class="usercard">
-            <div class="tap clearfix" id="#siteabout">
+            <div class="tap clearfix" id="siteabout">
                 <div class="picture">
                     <img src="./header_1.jpg" alt="header" style="width: 299px; height: 347px;">
                 </div>
@@ -203,7 +203,7 @@
     <section id="siteworks" class="portfolio">
         <h2 class="">作品集</h2>
         <nav>
-            <ol class='clearfix'>
+            <ol class='clearfix listbar'>
                 <li id="portfolio1">全部</li>
                 <li id="portfolio2">框架</li>
                 <li id="portfolio3">原生JS&amp;CSS</li>
@@ -257,7 +257,7 @@
                 x.currentTarget.classList.remove('active')
             }
         }
-
+        //点击跳转到相应位置
         let aTags = document.querySelectorAll('nav.list > ul > li > a')
         for (let i = 0; i < aTags.length; i++) {
             aTags[i].onclick = function (x) {
@@ -266,12 +266,27 @@
                 let a = x.currentTarget
                 //获取href原文
                 let href = a.getAttribute('href')
-                console.log(href)
+                // console.log(href)
                 let element = document.querySelector(href)
                 console.log(element)
                 let top = element.offsetTop;
-                //滑动到某个坐标
-                window.scrollTo(0, top - 60)
+                
+                let n = 25;
+                let duration = 500/n;
+                let currentTop = window.scrollY;
+                let targetTop = top - 60;
+                let distance = (targetTop-currentTop)/25;
+                let id = setInterval(function(){
+                    if(i ===n){
+                        window.clearInterval(id);
+                        return;
+                    }
+                    i = i+1;
+                    window.scrollTo(0,currentTop + distance*i);
+                },duration)
+
+                // //滑动到某个坐标
+                // window.scrollTo(0, top - 60)
             }
         }
     </script

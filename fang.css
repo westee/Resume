@@ -400,6 +400,7 @@ body .portfolio>nav .bar-inner{
     /* width: 32px; */
     border-radius: 3px;
     transition: all 0.3s;
+    width: 100%;    
     /* bar-inner内的进度条的变化全部都需要0.3s的变化 */
 }
 body .portfolio > nav .bar.state-1 .bar-inner{
@@ -414,4 +415,12 @@ body .portfolio > nav .bar.state-3 .bar-inner{
     margin-left: 145px;
     width: 90px;
     /* 对应的顺序不要搞错 */
+}
+/* #siteworks > nav{
+    position: relative;
+} */
+#portfolioBar{
+    /* position: absolute;
+    right: 0; */
+    width: 234px;
 }
