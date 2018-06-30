@@ -44,16 +44,16 @@
                 <span class="card">card</span>
                 <!--  -->
             </a>
-            <nav>
+            <nav class="list">
                 <ul class="clearfix">
                     <li>
-                        <a href="">关于</a>
+                        <a href="#siteabout">关于</a>
                     </li>
                     <li>
-                        <a href="">技能</a>
+                        <a href="#siteskills">技能</a>
                     </li>
                     <li class="menuTrigger">
-                        <a href="#">作品</a>
+                        <a href="#siteworks">作品</a>
                         <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
@@ -61,13 +61,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">经历</a>
+                        <a href="#siteexp">经历</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="">PRICING</a>
-                    </li>
+                    </li> -->
                     <li class="menuTrigger">
-                        <a href="">博客</a>
+                        <a href="#siteblog">博客</a>
                         <ul class="submenu">
                             <li>博客1</li>
                             <li>博客2</li>
@@ -75,13 +75,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="">CALENDAR</a>
+                        <a href="#sitecalendar">CALENDAR</a>
                     </li>
                     <li>
-                        <a href="">联系方式</a>
+                        <a href="#sitecontact">联系方式</a>
                     </li>
                     <li>
-                        <a href="">其他</a>
+                        <a href="#siteother">其他</a>
                     </li>
                 </ul>
             </nav>
@@ -93,7 +93,7 @@
     </div>
     <main>
         <div class="usercard">
-            <div class="tap clearfix">
+            <div class="tap clearfix" id="#siteabout">
                 <div class="picture">
                     <img src="./header_1.jpg" alt="header" style="width: 299px; height: 347px;">
                 </div>
@@ -158,7 +158,7 @@
 
         </p>
     </main>
-    <section class="skills">
+    <section  id="siteskills"  class="skills">
         <h2>职业技能</h2>
         <ol class="clearfix">
             <div>
@@ -200,7 +200,7 @@
 
         </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteworks" class="portfolio">
         <h2 class="">作品集</h2>
         <nav>
             <ol class='clearfix'>
@@ -210,6 +210,10 @@
             </ol>
             <div id="portfolioBar" class="bar state-1">
                 <div class="bar-inner"></div>
+                <div>
+                    <img src="./header_1(1).jpg" alt=" 0">
+                    <img src="./rs-cover.jpg" alt=" 0" width="1000px" height="500px">
+                </div>
             </div>
         </nav>
         <script>
@@ -230,31 +234,47 @@
         </div>
     </section>
     <script>
+        //加载动画
         window.setTimeout(function () {
             wrapper.classList.remove('active')
         }, 000)
+        //用户滑动窗口触发一个函数
         window.onscroll = function (scroll) {
-            if (scrollY > 0) {
+            if (scrollY > 0) {   //获得窗口滚动高度
                 topNavBar.classList.add('sticky')
             } else {
                 topNavBar.classList.remove('sticky')
             }
         }
-
+        //接受一个选择器,返回对应的所有元素
         let liTags = document.querySelectorAll('nav ul li')
-        //aTags的长度为2
+        //Tags的长度为2,鼠标离开与进入
         for (let i = 0; i < liTags.length; i++) {
             liTags[i].onmouseenter = function (x) {
                 x.currentTarget.classList.add('active')
             }
             liTags[i].onmouseleave = function (x) {
-                x.currentTarget.classList.remove('active') 
-                // let brother = li.getElementsByTagName('ul')
-                // console.log(brother)
-                // brother.classList.remove('active')
+                x.currentTarget.classList.remove('active')
             }
         }
-    </script>
+
+        let aTags = document.querySelectorAll('nav.list > ul > li > a')
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
+                //函数里的,阻止默认动画
+                x.preventDefault()
+                let a = x.currentTarget
+                //获取href原文
+                let href = a.getAttribute('href')
+                console.log(href)
+                let element = document.querySelector(href)
+                console.log(element)
+                let top = element.offsetTop;
+                //滑动到某个坐标
+                window.scrollTo(0, top - 60)
+            }
+        }
+    </script
 </body>
 
 </html>
